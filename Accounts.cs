@@ -2,7 +2,7 @@
 using System.Text;
 
 
-namespace MOFH_api
+namespace mofh
 {
     public class Accounts
     {

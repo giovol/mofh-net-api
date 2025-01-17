@@ -1,7 +1,7 @@
 ﻿using System.Net.Http.Headers;
 using System.Text;
 
-namespace MOFH_api
+namespace mofh
 {
     public class Domains
     {
