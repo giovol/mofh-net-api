@@ -1,4 +1,4 @@
-# MyOwnFreeHost api in .NET
+# MyOwnFreeHost API in .NET
 [![Build](https://github.com/giovol/mofh-net-api/actions/workflows/dotnet.yml/badge.svg)](https://github.com/giovol/mofh-net-api/actions/workflows/dotnet.yml)
 
 An API wrapper for [MyOwnFreeHost](https://api.myownfreehost.net) 
