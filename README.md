@@ -1,11 +1,11 @@
 # MyOwnFreeHost api in .NET
-[![Build](https://github.com/ptobuon/mofh-net-api/actions/workflows/dotnet.yml/badge.svg)](https://github.com/ptobuon/mofh-net-api/actions/workflows/dotnet.yml)
+[![Build](https://github.com/giovol/mofh-net-api/actions/workflows/dotnet.yml/badge.svg)](https://github.com/giovol/mofh-net-api/actions/workflows/dotnet.yml)
 
-An api wrapper of [MyOwnFreeHost](https://api.myownfreehost.net) 
+An API wrapper for [MyOwnFreeHost](https://api.myownfreehost.net) 
+
 ## Documentation
 
-[Documentation can be found here](https://ptobuon.eu.org/mofh-net-api)
-
+[Documentation can be found here](https://giovol.github.io/mofh-net-api)
 
 ## License
 
@@ -14,4 +14,4 @@ An api wrapper of [MyOwnFreeHost](https://api.myownfreehost.net)
 
 ## Authors
 
-- [@ptobuon](https://www.github.com/ptobuon)
+- [Giovanni Voltan](https://www.github.com/giovol)
