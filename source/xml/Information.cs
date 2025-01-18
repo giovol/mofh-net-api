@@ -1,7 +1,6 @@
-using System.Net.Http.Headers;
 using System.Text;
 
-namespace mofh
+namespace mofh.xml
 {
     public static class Information
     {
@@ -9,7 +8,7 @@ namespace mofh
         {
             using (var httpClient = new HttpClient())
             {
-                using (var request = new HttpRequestMessage(new HttpMethod("GET"), "https://panel.myownfreehost.net/json-api/version.php"))
+                using (var request = new HttpRequestMessage(new HttpMethod("GET"), "https://panel.myownfreehost.net/xml-api/version.php"))
                 {
                     var base64authorization = Convert.ToBase64String(Encoding.ASCII.GetBytes(apiUsername + ":" + apiPassword));
                     request.Headers.TryAddWithoutValidation("Authorization", $"Basic {base64authorization}");
@@ -22,7 +21,7 @@ namespace mofh
         {
             using (var httpClient = new HttpClient())
             {
-                using (var request = new HttpRequestMessage(new HttpMethod("GET"), "https://panel.myownfreehost.net/json-api/listpkgs.php"))
+                using (var request = new HttpRequestMessage(new HttpMethod("GET"), "https://panel.myownfreehost.net/xml-api/listpkgs.php"))
                 {
                     var base64authorization = Convert.ToBase64String(Encoding.ASCII.GetBytes(apiUsername + ":" + apiPassword));
                     request.Headers.TryAddWithoutValidation("Authorization", $"Basic {base64authorization}");
