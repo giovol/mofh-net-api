@@ -4,6 +4,11 @@ namespace mofh.xml
 {
     public static class Information
     {
+        /// <summary>
+        /// Get the API version (https://api.myownfreehost.net/XML/information/api-version)
+        /// </summary>
+        /// <param name="apiUsername">API username.</param>
+        /// <param name="apiPassword">API password.</param>
         public static async void APIVersion(string apiUsername, string apiPassword)
         {
             using (var httpClient = new HttpClient())
@@ -17,6 +22,11 @@ namespace mofh.xml
                 }
             }
         }
+        /// <summary>
+        /// List all packages (https://api.myownfreehost.net/XML/information/list-packages)
+        /// </summary>
+        /// <param name="apiUsername">API username.</param>
+        /// <param name="apiPassword">API password.</param>
         public static async void ListPackages(string apiUsername, string apiPassword)
         {
             using (var httpClient = new HttpClient())
