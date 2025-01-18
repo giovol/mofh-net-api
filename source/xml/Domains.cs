@@ -53,5 +53,21 @@ namespace mofh.xml
                 }
             }
         }
+        public static async void ValidateDomainByCNAME(string apiUsername, string apiPassword, string domain)
+        {
+            using (var httpClient = new HttpClient())
+            {
+                using (var request = new HttpRequestMessage(new HttpMethod("POST"), "https://panel.myownfreehost.net/xml-api/getcname.php"))
+                {
+                    var base64authorization = Convert.ToBase64String(Encoding.ASCII.GetBytes("username:password"));
+                    request.Headers.TryAddWithoutValidation("Authorization", $"Basic {base64authorization}");
+
+                    request.Content = new StringContent("api_user=" + apiUsername + "&api_key=" + apiPassword + "&domain_name=" + domain);
+                    request.Content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/x-www-form-urlencoded");
+
+                    var response = await httpClient.SendAsync(request);
+                }
+            }
+        }
     }
 }
