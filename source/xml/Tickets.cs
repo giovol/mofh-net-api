@@ -14,7 +14,7 @@ namespace mofh.xml
                     var base64authorization = Convert.ToBase64String(Encoding.ASCII.GetBytes("username:password"));
                     request.Headers.TryAddWithoutValidation("Authorization", $"Basic {base64authorization}");
 
-                    request.Content = new StringContent("api_user=username&api_key=password&domain_name=" + domain);
+                    request.Content = new StringContent("api_user=" + apiUsername + "&api_key=" + apiPassword + "&domain_name=" + domain);
                     request.Content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/x-www-form-urlencoded");
 
                     var response = await httpClient.SendAsync(request);
