@@ -5,6 +5,16 @@ namespace mofh.xml
 {
     public static class Accounts
     {
+        /// <summary>
+        /// Create a new account (https://api.myownfreehost.net/XML/accounts/create)
+        /// </summary>
+        /// <param name="apiUsername">API username.</param>
+        /// <param name="apiPassword">API password.</param>
+        /// <param name="username">User username.</param>
+        /// <param name="password">User password</param>
+        /// <param name="email">User username</param>
+        /// <param name="domain">User domain</param>
+        /// <param name="plan">User plan</param>
         public static async void Create(string apiUsername, string apiPassword, string username, string password, string email, string domain, string plan)
         {
             using (var httpClient = new HttpClient())
@@ -21,6 +31,13 @@ namespace mofh.xml
                 }
             }
         }
+        /// <summary>
+        /// Suspend an account (https://api.myownfreehost.net/XML/accounts/suspend)
+        /// </summary>
+        /// <param name="apiUsername">API username.</param>
+        /// <param name="apiPassword">API password.</param>
+        /// <param name="username">User username.</param>
+        /// <param name="reason">Suspend reason.</param>
         public static async void Suspend(string apiUsername, string apiPassword, string username, string reason)
         {
             using (var httpClient = new HttpClient())
@@ -37,6 +54,12 @@ namespace mofh.xml
                 }
             }
         }
+        /// <summary>
+        /// Unsuspend an account (https://api.myownfreehost.net/XML/accounts/unsuspend)
+        /// </summary>
+        /// <param name="apiUsername">API username.</param>
+        /// <param name="apiPassword">API password.</param>
+        /// <param name="username">User username.</param>
         public static async void Unsuspend(string apiUsername, string apiPassword, string username)
         {
             using (var httpClient = new HttpClient())
@@ -53,6 +76,12 @@ namespace mofh.xml
                 }
             }
         }
+        /// <summary>
+        /// Remove an account (https://api.myownfreehost.net/XML/accounts/remove)
+        /// </summary>
+        /// <param name="apiUsername">API username.</param>
+        /// <param name="apiPassword">API password.</param>
+        /// <param name="username">User username.</param>
         public static async void Remove(string apiUsername, string apiPassword, string username)
         {
             using (var httpClient = new HttpClient())
@@ -69,6 +98,13 @@ namespace mofh.xml
                 }
             }
         }
+        /// <summary>
+        /// Change an account password (https://api.myownfreehost.net/XML/accounts/change-password)
+        /// </summary>
+        /// <param name="apiUsername">API username.</param>
+        /// <param name="apiPassword">API password.</param>
+        /// <param name="username">User username.</param>
+        /// <param name="password">New password.</param>
         public static async void ChangePassword(string apiUsername, string apiPassword, string username, string password)
         {
             using (var httpClient = new HttpClient())
@@ -85,6 +121,13 @@ namespace mofh.xml
                 }
             }
         }
+        /// <summary>
+        /// Change an account package (https://api.myownfreehost.net/XML/accounts/change-package)
+        /// </summary>
+        /// <param name="apiUsername"></param>
+        /// <param name="apiPassword"></param>
+        /// <param name="username"></param>
+        /// <param name="plan"></param>
         public static async void ChangePackage(string apiUsername, string apiPassword, string username, string plan)
         {
             using (var httpClient = new HttpClient())
