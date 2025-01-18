@@ -3,27 +3,33 @@ using System.Text;
 
 namespace mofh
 {
-    public class Information
+    public static class Information
     {
-        public static void APIVersion(string apiUsername, string apiPassword)
+        public static async void APIVersion(string apiUsername, string apiPassword)
         {
-            using (var client = new HttpClient())
+            using (var httpClient = new HttpClient())
             {
-                var authToken = Encoding.ASCII.GetBytes($"{apiUsername}:{apiPassword}");
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(authToken));
+                using (var request = new HttpRequestMessage(new HttpMethod("GET"), "https://panel.myownfreehost.net/json-api/version.php"))
+                {
+                    var base64authorization = Convert.ToBase64String(Encoding.ASCII.GetBytes(apiUsername + ":" + apiPassword));
+                    request.Headers.TryAddWithoutValidation("Authorization", $"Basic {base64authorization}");
 
-                var response = client.GetAsync("https://panel.myownfreehost.net/json-api/version.php").Result;
-                if (response.IsSuccessStatusCode)
-                {
-                    var responseData = response.Content.ReadAsStringAsync().Result;
-                    Console.WriteLine(responseData);
-                }
-                else
-                {
-                    Console.WriteLine($"Error: {response.StatusCode}");
+                    var response = await httpClient.SendAsync(request);
                 }
             }
         }
-        
+        public static async void ListPackages(string apiUsername, string apiPassword)
+        {
+            using (var httpClient = new HttpClient())
+            {
+                using (var request = new HttpRequestMessage(new HttpMethod("GET"), "https://panel.myownfreehost.net/json-api/listpkgs.php"))
+                {
+                    var base64authorization = Convert.ToBase64String(Encoding.ASCII.GetBytes(apiUsername + ":" + apiPassword));
+                    request.Headers.TryAddWithoutValidation("Authorization", $"Basic {base64authorization}");
+
+                    var response = await httpClient.SendAsync(request);
+                }
+            }
+        }
     }
 }
