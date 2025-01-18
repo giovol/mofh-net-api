@@ -5,6 +5,12 @@ namespace mofh.xml
 {
     public static class Domains
     {
+        /// <summary>
+        /// Check if a domain is available (https://api.myownfreehost.net/XML/domains/check-if-available)
+        /// </summary>
+        /// <param name="apiUsername">API username.</param>
+        /// <param name="apiPassword">API password.</param>
+        /// <param name="domain">Domain to check.</param>
         public static async void CheckIfAvailable(string apiUsername, string apiPassword, string domain)
         {
             using (var httpClient = new HttpClient())
@@ -21,7 +27,13 @@ namespace mofh.xml
                 }
             }
         }
-        public static async void GetUserDomain(string apiUsername, string apiPassword, string username)
+        /// <summary>
+        /// Get the user's domains (https://api.myownfreehost.net/XML/domains/get-user-domains)
+        /// </summary>
+        /// <param name="apiUsername">API username.</param>
+        /// <param name="apiPassword">API password.</param>
+        /// <param name="username">User to check.</param>
+        public static async void GetUserDomains(string apiUsername, string apiPassword, string username)
         {
             using (var httpClient = new HttpClient())
             {
@@ -37,6 +49,12 @@ namespace mofh.xml
                 }
             }
         }
+        /// <summary>
+        /// Get user by domain (https://api.myownfreehost.net/XML/domains/get-user-by-domain)
+        /// </summary>
+        /// <param name="apiUsername">API username.</param>
+        /// <param name="apiPassword">API password.</param>
+        /// <param name="domain">Domain to check.</param>
         public static async void GetUserByDomain(string apiUsername, string apiPassword, string domain)
         {
             using (var httpClient = new HttpClient())
@@ -53,6 +71,12 @@ namespace mofh.xml
                 }
             }
         }
+        /// <summary>
+        /// Validate domain by CNAME (https://api.myownfreehost.net/XML/domains/validate-domain-by-cname)
+        /// </summary>
+        /// <param name="apiUsername">API username.</param>
+        /// <param name="apiPassword">API password.</param>
+        /// <param name="domain">Domain to validate.</param>
         public static async void ValidateDomainByCNAME(string apiUsername, string apiPassword, string domain)
         {
             using (var httpClient = new HttpClient())
