@@ -4,7 +4,35 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>API wrapper for MyOwnFreeHost</Title>
+    <Version>20250118</Version>
+    <Description>MyOwnFreeHost API in .NET</Description>
+    <Copyright>Giovanni Voltan</Copyright>
+    <PackageProjectUrl>https://giovol.github.io/mofh-net-api</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/giovol/mofh-net-api</RepositoryUrl>
+    <PackageTags>API; C#; .NET</PackageTags>
+    <PackageReleaseNotes>Added tickets and Information classes and updated Accounts and Domains classes.</PackageReleaseNotes>
+    <Company />
+    <Authors>Giovanni Voltan</Authors>
+    <Product />
+    <AssemblyVersion>20250118</AssemblyVersion>
+    <FileVersion>20250118</FileVersion>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
